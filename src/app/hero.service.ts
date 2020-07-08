@@ -5,7 +5,6 @@ import { Observable, of } from 'rxjs';
 
 import { MessageService } from './message.service';
 import { Hero } from './hero';
-import { HEROES } from './mock-heroes';
 
 @Injectable({
   providedIn: 'root',
@@ -27,9 +26,14 @@ export class HeroService {
   }
 
   getHero(id: number): Observable<Hero> {
-    // TODO: send the message after fetching the heroes
-    this.messageService.add(`HeroService: fetched hero with id ${id}`);
-    return of(HEROES.find((hero) => hero.id === id));
+    return this.http
+      .get<Hero>(`${this.heroesUrl}/${id}`)
+      .pipe(
+        tap(
+          (_) => this.log(`fetched hero by id ${id}`),
+          catchError(this.handleError(`getHero by id ${id}`))
+        )
+      );
   }
 
   /** Log a HeroService message with the MessageService */
