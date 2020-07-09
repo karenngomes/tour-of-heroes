@@ -1,6 +1,8 @@
-# TourOfHeroes
+# Tour Of Heroes
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.0.1.
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.0.1 and hosted on [https://tourofheroes.netlify.app/](https://tourofheroes.netlify.app/).
+
+This code was based on [Tour Of Heroes Tutorial](https://angular.io/tutorial). 
 
 ## Development server
 
