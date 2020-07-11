@@ -3,16 +3,20 @@ import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 
-import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
-import { MessagesModule } from './modules/messages/messages.module';
-
 import { InMemoryDataService } from './in-memory-data.service';
 
+import { AppRoutingModule } from './app-routing.module';
+import { MessagesModule } from './modules/messages/messages.module';
+
+import { AppComponent } from './app.component';
+import { HeroSearchComponent } from './components/hero-search/hero-search.component';
+import { DashboardComponent } from './components/dashboard/dashboard.component';
 
 @NgModule({
   declarations: [
     AppComponent,
+    HeroSearchComponent,
+    DashboardComponent
   ],
   imports: [
     BrowserModule,
